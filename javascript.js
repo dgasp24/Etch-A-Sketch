@@ -7,7 +7,7 @@ function getRandom(){
 
 function reset(){
     container.textContent = "";
-    createGrid(100);
+    createGrid(20);
 }
 
 
@@ -20,10 +20,10 @@ function createGrid(size){
             container.appendChild(divs);
 
             container.addEventListener("mouseover", (e) => {
-    if(e.buttons === 1 && e.target.classList.contains("divs")){
-        e.target.style.backgroundColor = `rgb(${getRandom()}, ${getRandom()}, ${getRandom()})`;
-    }
-});
+                if(e.buttons === 1 && e.target.classList.contains("divs")){
+                    e.target.style.backgroundColor = `rgb(${getRandom()}, ${getRandom()}, ${getRandom()})`;
+                }
+            });
 /*
             divs.addEventListener("mouseover", () => {
                 divs.style.backgroundColor = `rgb(${getRandom()}, ${getRandom()}, ${getRandom()})`;
@@ -33,5 +33,5 @@ function createGrid(size){
     }
 }
 }
-createGrid(100);
+createGrid(20);
 console.log(getRandom());
