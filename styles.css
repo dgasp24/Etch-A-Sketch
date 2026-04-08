@@ -1,13 +1,13 @@
 #container{
     display: flex; 
     flex-flow: row wrap;
-    height: 720px;
-    width: 720px;
+    height: 80vh;
+    width: 80vh;
     border: solid 2px black;
     text-align: center;
     justify-content: center;
     margin: auto;
-    margin-top: 5vh;
+    margin-top: 3vh;
     margin-bottom: 5vh;
 }
 
@@ -23,7 +23,6 @@
 #reset{
     margin: auto;
     justify-content: center;
-    display: flex;
     margin-top: 2vh;
     margin-bottom: 20px;
 }
@@ -31,7 +30,10 @@
 #input{
     width: 150px;
     margin: auto;
-    justify-content: center;
-    display: flex;
-    text-align: center;
+}
+
+#userSelection{
+    border: solid;
+    display: block;
+    flex-direction: column;
 }

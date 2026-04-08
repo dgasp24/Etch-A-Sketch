@@ -1,5 +1,6 @@
 const container = document.querySelector("#container");
 const userSelect = document.querySelector("#userSelection");
+const announcement = document.createElement("p");
 
 function getRandom(){
     let number = Math.floor(Math.random() * 256);
@@ -21,12 +22,13 @@ function grabValue(){
     }
 
     if(value < 16 || value > 100){
-        const announcement = document.createElement("p");
         announcement.textContent = "Invalid Input, please put a number between 16 and 100!";
         announcement.classList.add("error");
         userSelect.appendChild(announcement);
         return;
     }else{
+        announcement.textContent = `${value}x${value}`;
+        userSelect.appendChild(announcement);
         createGrid(value);
     }
 }
