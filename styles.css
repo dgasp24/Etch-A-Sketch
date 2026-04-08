@@ -1,0 +1,21 @@
+#container{
+    display: flex; 
+    flex-flow: row wrap;
+    height: 720px;
+    width: 720px;
+    border: solid 2px black;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.divs{
+
+    box-sizing: border-box;
+}
+
+.divs:hover{
+    background-color: black;
+}
