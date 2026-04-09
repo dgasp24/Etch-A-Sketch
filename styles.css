@@ -1,39 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+
+body{
+    font-family: "Chewy", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    background-color: rgba(18, 47, 80, 0.781);
+}
+
+/* entire page that orients that page correctly*/
+#page{
+    display:flex;
+    align-items: flex-start;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* container that holds all divs for drawing*/
 #container{
     display: flex; 
     flex-flow: row wrap;
-    height: 80vh;
-    width: 80vh;
+    height: 720px;
+    width: 720px;
     border: solid 2px black;
-    text-align: center;
-    justify-content: center;
-    margin: auto;
     margin-top: 3vh;
     margin-bottom: 5vh;
+    background-color: white;
+    box-shadow: 5px 5px 5px black;
+    border-radius: 3px;
 }
 
+/*divs for drawing*/
 .divs{
-
     box-sizing: border-box;
 }
 
-.divs:hover{
-    background-color: black;
-}
-
-#reset{
-    margin: auto;
-    justify-content: center;
-    margin-top: 2vh;
-    margin-bottom: 20px;
-}
-
-#input{
-    width: 150px;
-    margin: auto;
-}
-
-#userSelection{
+/* left side of page with both divs*/
+.left-side{
     border: solid;
     display: block;
     flex-direction: column;
+    text-align: center;
+    background-color: white;
+    width: 350px;
+    margin-left: 5px;
+    padding: 10px;
+    box-shadow: 2px 2px ;
+    border-radius: 15px;
 }
+
+/* user selection div with both buttons */
+#userSelection{
+    width: 350px;
+    margin-top: 25vh;
+}
+
+/*info div with talking about grid size and invalid input*/
+#info{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* having to do with all buttons*/
+button{
+    font-family: "Chewy", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 2px 2px black;
+}
+
+/*reset button*/
+#reset{
+    margin: auto;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/*input tab*/
+#input{
+    margin: auto;
+    text-align: center;
+    border: solid;
+    width: 150px;
+    height: 30px;
+    border-radius: 15px;
+    font-size: 13px;
+    box-shadow: 1px 2px 5px;
+}
+
