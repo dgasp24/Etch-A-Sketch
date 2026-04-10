@@ -12,9 +12,11 @@
         <div id = "userSelection" class = "left-side">
             <h1 id = "title">Etch-A-Sketch!</h1>
             <button id = "reset" onclick="reset()">Reset</button>
+            <input type = "checkbox" id = "color">
+            <input type = "checkbox" id = "border">
             <br>
-            <input type = "number" placeholder ="Please type a number" id ="input" min="16" max="100">
-            <button onclick="grabValue()">Submit</button>
+            <p id = "size">Grid Size</p>
+            <input type="range" min="16" max="100" value="56" class="slider" id="input">
         </div>
     </div>
     <div id = "container"></div>

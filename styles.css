@@ -73,12 +73,19 @@ button{
     border-radius: 10px;
     cursor: pointer;
     box-shadow: 2px 2px black;
+    transition: transform 0.3s ease;
+}
+
+button:hover{
+    transform: scale(1.1);
 }
 
 /*reset button*/
 #reset{
     margin: auto;
     justify-content: center;
+    width: 100px;
+    display: flex;
     margin-bottom: 20px;
 }
 
@@ -86,11 +93,21 @@ button{
 #input{
     margin: auto;
     text-align: center;
-    border: solid;
     width: 150px;
     height: 30px;
-    border-radius: 15px;
     font-size: 13px;
-    box-shadow: 1px 2px 5px;
+    transition: transform 0.4s ease;
+}
+
+#size{
+    margin-bottom: 2px;
+}
+
+input:hover{
+    transform: scale(1.1);
+}
+
+#container.borders .divs{
+    border: 1px solid black;
 }
 

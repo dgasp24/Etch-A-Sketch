@@ -1,6 +1,21 @@
 const container = document.querySelector("#container");
 const userSelect = document.querySelector("#userSelection");
 const left = document.querySelector("#left");
+const color = document.querySelector("#color");
+const border = document.querySelector("#border");
+
+input.addEventListener("input", () => {
+    grabValue();
+});
+
+border.addEventListener("change", () => {
+    if(border.checked){
+        container.classList.add("borders");
+    } else {
+        container.classList.remove("borders");
+    }
+});
+
 
 function getRandom(){
     let number = Math.floor(Math.random() * 256);
@@ -29,19 +44,11 @@ function grabValue(){
         left.appendChild(gridInfo);
     }
 
-    //Resets div so no repeats
-     gridInfo.textContent = "";
-
-    //Creates text content in gridInfo where it tells grid size or if theres an invalid input
-    if(value < 16 || value > 100){
-        gridInfo.style.fontSize = "18px";
-        gridInfo.textContent = "Invalid input, please put a number between 16 and 100!";
-        return;
-    }else{
+    //Creates text content in gridInfo where it tells grid size
         gridInfo.style.fontSize = "60px";
         gridInfo.textContent = `${value}x${value}`;
         createGrid(value);
-    }
+    
 }
 
 
@@ -50,13 +57,17 @@ function createGrid(size){
     for(let i = 1; i <= size; i++){
         for(let j =1; j <= size; j++){
         const divs = document.createElement("div");
-            divs.setAttribute("style", `width: calc(100%/ ${size}); background-color: white`)
+            divs.setAttribute("style", `width: calc(100%/ ${size}); background-color: white`);
             divs.setAttribute("class", "divs");
             container.appendChild(divs);
 
             divs.addEventListener("mouseover", () => {
-                divs.style.backgroundColor = `rgb(${getRandom()}, ${getRandom()}, ${getRandom()})`;
-                divs.style.opacity = Math.min((+divs.style.opacity || 0) + 0.1, 1);
+                if(color.checked){
+                    divs.style.backgroundColor = `rgb(${getRandom()}, ${getRandom()}, ${getRandom()})`;
+                }else {
+                    divs.style.backgroundColor = "black";
+                }
+            divs.style.opacity = Math.min((+divs.style.opacity || 0) + 0.1, 1);
             }
         )
     }
