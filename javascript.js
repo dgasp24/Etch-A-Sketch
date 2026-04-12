@@ -3,18 +3,31 @@ const userSelect = document.querySelector("#userSelection");
 const left = document.querySelector("#left");
 const color = document.querySelector("#color");
 const border = document.querySelector("#border");
+const black = document.querySelector("#black");
+let borderActive = true;
+let colorActive = true;
 
 input.addEventListener("input", () => {
     grabValue();
 });
 
-border.addEventListener("change", () => {
-    if(border.checked){
+border.addEventListener("click", () => {
+    if(borderActive){
         container.classList.add("borders");
+        borderActive = false;
     } else {
         container.classList.remove("borders");
+        borderActive = true;
     }
 });
+
+color.addEventListener("click", () => {
+    colorActive = true;
+})
+
+black.addEventListener("click", () =>{
+    colorActive = false;
+})
 
 
 function getRandom(){
@@ -28,7 +41,7 @@ function reset(){
     if(gridInfo){
         gridInfo.remove();
     }
-    container.textContent = "";
+    container.replaceChildren();
     createGrid(16);
 }
 
@@ -54,15 +67,14 @@ function grabValue(){
 
 function createGrid(size){
     container.textContent = "";
-    for(let i = 1; i <= size; i++){
-        for(let j =1; j <= size; j++){
+    for(let i = 1; i <= size * size; i++){
         const divs = document.createElement("div");
             divs.setAttribute("style", `width: calc(100%/ ${size}); background-color: white`);
             divs.setAttribute("class", "divs");
             container.appendChild(divs);
 
             divs.addEventListener("mouseover", () => {
-                if(color.checked){
+                if(colorActive){
                     divs.style.backgroundColor = `rgb(${getRandom()}, ${getRandom()}, ${getRandom()})`;
                 }else {
                     divs.style.backgroundColor = "black";
@@ -71,5 +83,4 @@ function createGrid(size){
             }
         )
     }
-}
 }
